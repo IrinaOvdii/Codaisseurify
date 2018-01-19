@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.photo_artist img {
+  width: 200px;
+  height: auto;
+}

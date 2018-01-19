@@ -10,8 +10,8 @@
 Song.destroy_all
 Artist.destroy_all
 
-artist1 = Artist.create!({name: "R.E.M."})
-artist2 = Artist.create!({name: "Lohn Lennon"})
+artist1 = Artist.create!({name: "R.E.M.", image_url: "http://res.cloudinary.com/irinaovdii/image/upload/v1516341353/rem_meehbe.jpg"})
+artist2 = Artist.create!({name: "John Lennon", image_url: "http://res.cloudinary.com/irinaovdii/image/upload/v1516341353/lennon_f6gppw.jpg"})
 
 
 song1 = Song.create!( { name: "Losing My Religion", duration: 3, artist: artist1 })
