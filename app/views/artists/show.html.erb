@@ -3,6 +3,7 @@
 <p>
   <strong>Name of the artist:</strong>
   <%= @artist.name %>
+  <%= link_to "[Delete artist]", artist_path(@artist.id), method: :delete, data: {confirm: "Are you sure?"} %>
 </p>
 
 <h4>List of Songs</h4>
