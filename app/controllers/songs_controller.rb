@@ -25,8 +25,9 @@ class SongsController < ApplicationController
     redirect_to @artist, notice: "Song Deleted!"
   end
 
-
-
+  def bargain?
+    duration < 5
+  end
 
   def set_artist
       @artist = Artist.find(params[:artist_id])
@@ -35,4 +36,6 @@ class SongsController < ApplicationController
   def song_params
     params.require(:song).permit(:name, :duration, :audio_url, :artist_id)
   end
+
+
 end
