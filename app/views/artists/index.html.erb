@@ -4,8 +4,13 @@
 <% @artists.each do |artist| %>
   <li>
     <strong><%= link_to artist.name, artist_path(artist.id) %></strong>
-    <!-- <p class="photo_artist"><%= image_tag artist.image_url %></p> -->
+
+  <h4>Photo:</h4>
+    <% artist.photos.each do |photo| %>
+    <%= image_tag photo.image.thumbnail %>
+    <hr>
+    <% end %>
 
   </li>
-  <% end %>
+<% end %>
 </ul>

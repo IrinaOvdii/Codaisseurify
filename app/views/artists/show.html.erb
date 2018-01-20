@@ -6,7 +6,12 @@
   <%= link_to "[Delete artist]", artist_path(@artist.id), method: :delete, data: {confirm: "Are you sure?"} %>
 </p>
 
-<h4>List of Songs</h4>
+<h4>Photo:</h4>
+<% @artist.photos.each do |photo| %>
+  <%= image_tag photo.image.thumbnail %>
+<% end %>
+
+<h4>List of Songs:</h4>
 
 <% if @artist.songs.any? %>
   <ul>
