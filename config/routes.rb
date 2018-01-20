@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     #delete '/:id/song' => 'songs#destroy', as: :set_artist
     resources :songs
   end
-
+    resources :photos, only: [:destroy]
 end

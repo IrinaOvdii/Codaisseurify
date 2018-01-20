@@ -4,12 +4,13 @@
 <% @artists.each do |artist| %>
   <li>
     <strong><%= link_to artist.name, artist_path(artist.id) %></strong>
-    <%= link_to "[Add Photo]", edit_artist_path(artist) %>
-
 
   <h4>Photo:</h4>
     <% artist.photos.each do |photo| %>
-    <%= image_tag photo.image.thumbnail %>
+    <%= image_tag photo.image.thumbnail %> <br/>
+    <%= link_to "[Add photo]", edit_artist_path(artist) %>
+    <%= link_to "[Delete photo]", photo_path( photo.id ), class: "btn btn-default",
+    method: :delete, data: { confirm: "Are you sure?" } %>
     <hr>
     <% end %>
 
