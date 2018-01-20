@@ -27,16 +27,18 @@ class ArtistsController < ApplicationController
       end
   end
 
-  def edit
+    def edit
+      @artist = Artist.find(params[:id])
       @photos = @artist.photos
-  end
+    end
 
   def update
+    @artist = Artist.find(params[:id])
     if @artist.update(artist_params)
       image_params.each do |image|
         @artist.photos.create(image: image)
     end
-      redirect_to edit_artist_path(@artist), notice: "Artist updated"
+      redirect_to @artist, notice: "Artist updated"
     else
       render :edit
     end

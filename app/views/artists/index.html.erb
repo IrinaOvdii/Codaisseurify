@@ -4,6 +4,8 @@
 <% @artists.each do |artist| %>
   <li>
     <strong><%= link_to artist.name, artist_path(artist.id) %></strong>
+    <%= link_to "[Add Photo]", edit_artist_path(artist) %>
+
 
   <h4>Photo:</h4>
     <% artist.photos.each do |photo| %>
