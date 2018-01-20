@@ -11,6 +11,9 @@
   <ul>
     <% @artist.songs.each do |song| %>
       <li><%= song.name %></li>
+      <%= link_to "[Delete song]", url_for([@artist, song]), method: :delete, data: {confirm: "Are you sure?"} %>
+     <!-- <%= link_to "[Delete song]", artist_songs_path(@artist, song), method: :delete, data: {confirm: "Are you sure?"} %> -->
+
     <% end %>
   </ul>
 <% else %>
