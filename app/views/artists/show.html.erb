@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @artist.name %>
+</p>
+
+<h4>List of Songs</h4>
+
+<% if @artist.songs.any? %>
+  <ul>
+    <% @artist.songs.each do |song| %>
+      <li><%= song.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no song belongs to this artist.</p>
+<% end %>

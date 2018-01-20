@@ -1,6 +1,10 @@
 <h1>Artists:</h1>
 
+<ul>
 <% @artists.each do |artist| %>
-  <p><%= artist.name %></p>
-  <p class="photo_artist"><%= image_tag artist.image_url %></p>
-<% end %>
+  <li>
+    <strong><%= link_to artist.name, artist_path(artist.id) %></strong>
+    <p class="photo_artist"><%= image_tag artist.image_url %></p>
+  </li>
+  <% end %>
+</ul>
