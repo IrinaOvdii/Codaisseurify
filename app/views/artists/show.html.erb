@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Name of the artist:</strong>
   <%= @artist.name %>
 </p>
 
@@ -16,3 +16,7 @@
 <% else %>
   <p>There are no song belongs to this artist.</p>
 <% end %>
+
+<hr>
+
+<%= link_to "[Add New Song]", new_artist_song_path(@artist) %>
