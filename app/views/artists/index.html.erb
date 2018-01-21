@@ -7,7 +7,7 @@
 
   <h4>Photo:</h4>
     <% artist.photos.each do |photo| %>
-    <%= image_tag photo.image.thumbnail %>
+    <div><%= image_tag photo.image.thumbnail %></div>
     <%= link_to "Add photo", edit_artist_path(artist), class: "button" %>
     <%= link_to "Delete photo", photo_path( photo.id ), class: "button",
     method: :delete, data: { confirm: "Are you sure?" } %>
