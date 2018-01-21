@@ -1,4 +1,4 @@
-<h1>Artists:</h1>
+<h1 class="main-banner">Artists:</h1>
 
 <ul>
 <% @artists.each do |artist| %>
@@ -7,10 +7,10 @@
 
   <h4>Photo:</h4>
     <% artist.photos.each do |photo| %>
-    <div><%= image_tag photo.image.thumbnail %></div>
-    <%= link_to "Add photo", edit_artist_path(artist), class: "button" %>
-    <%= link_to "Delete photo", photo_path( photo.id ), class: "button",
-    method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= image_tag photo.image.thumbnail, class: "img" %>
+    <p><%= link_to "Add photo", edit_artist_path(artist), class: "button" %></p>
+    <p><%= link_to "Delete photo", photo_path( photo.id ), class: "button",
+    method: :delete, data: { confirm: "Are you sure?" } %></p>
     <hr>
     <% end %>
 
