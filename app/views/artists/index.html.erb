@@ -3,13 +3,13 @@
 <ul>
 <% @artists.each do |artist| %>
   <li>
-    <strong><%= link_to artist.name, artist_path(artist.id) %></strong>
+    <h1><strong><%= link_to artist.name, artist_path(artist.id) %></strong></h1>
 
   <h4>Photo:</h4>
     <% artist.photos.each do |photo| %>
-    <%= image_tag photo.image.thumbnail %> <br/>
-    <%= link_to "[Add photo]", edit_artist_path(artist) %>
-    <%= link_to "[Delete photo]", photo_path( photo.id ), class: "btn btn-default",
+    <div class="container"><%= image_tag photo.image.thumbnail %></div> <br/>
+    <%= link_to "Add photo", edit_artist_path(artist), class: "button" %>
+    <%= link_to "Delete photo", photo_path( photo.id ), class: "button",
     method: :delete, data: { confirm: "Are you sure?" } %>
     <hr>
     <% end %>

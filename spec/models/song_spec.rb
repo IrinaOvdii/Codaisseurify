@@ -18,17 +18,14 @@ RSpec.describe Song, type: :model do
   end
 end
 
-
-
-
-  #describe "#bargain?" do
+  #describe "#short?" do
     #let!(:artist1) { create :artist, name: "Artist_1", image_url: "http://res.cloudinary.com/irinaovdii/image/upload" }
-    #let(:bargain_song) { create :song, duration: 15, artist: artist1 }
-    #let(:non_bargain_song) { create :song, duration: 2, artist: artist1 }
+    #let(:short_song) { create :song, duration: 1, artist: artist1 }
+    #let(:non_short_song) { create :song, duration: 12, artist: artist1 }
 
     #it "returns true if the duration of song is shorter than 5" do
-      #expect(bargain_song.bargain?).to eq(true)
-      #expect(non_bargain_song.bargain?).to eq(false)
+      #expect(short_song.short?).to eq(true)
+      #expect(non_short_song.short?).to eq(false)
     #end
   #end
 end

@@ -27,21 +27,21 @@ class ArtistsController < ApplicationController
       end
   end
 
-    def edit
-      @artist = Artist.find(params[:id])
-      @photos = @artist.photos
-    end
+  def edit
+    @artist = Artist.find(params[:id])
+    @photos = @artist.photos
+  end
 
   def update
     @artist = Artist.find(params[:id])
-    if @artist.update(artist_params)
+      if @artist.update(artist_params)
       image_params.each do |image|
         @artist.photos.create(image: image)
-    end
+      end
       redirect_to @artist, notice: "Artist updated"
-    else
+      else
       render :edit
-    end
+      end
   end
 
   def destroy
@@ -50,13 +50,12 @@ class ArtistsController < ApplicationController
     redirect_to @artist, notice: "Artist Deleted!"
   end
 
+  private
   def artist_params
     params.require(:artist).permit(:name, :image_url)
   end
 
   def image_params
-  params[:images].present? ? params.require(:images) : []
-end
-
-
+    params[:images].present? ? params.require(:images) : []
+  end
 end

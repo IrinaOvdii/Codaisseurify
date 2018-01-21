@@ -4,18 +4,16 @@
   <%= f.text_field :name, placeholder: "Wtite the name of the artist", class: "form-control" %>
 </div>
 
-
-<label>Photos</label>
-
+<label>Photos:</label>
 <div class="form-group">
-  <span class="btn btn-default">
-    Upload Photos
+  <span class="button">
+    Upload Photos:
     <%= file_field_tag "images[]", type: :file, multiple: true %>
   </span>
 </div>
 
 <div class="actions">
-  <%= f.submit "Save", class: "btn btn-primary" %>
+  <%= f.submit "Save", class: "button" %>
 </div>
 
 <%end%>
