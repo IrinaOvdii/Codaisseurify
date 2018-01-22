@@ -1,4 +1,4 @@
-@import "bootstrap-sprockets";
+/*@import "bootstrap-sprockets";*/
 @import "bootstrap";
 
 body {
@@ -12,7 +12,7 @@ body {
 }
 
 .main-banner {
-  background: #e0e3e5;
+  background: rgb(211,211,211);
   height: 60px;
   text-align: center;
 }
